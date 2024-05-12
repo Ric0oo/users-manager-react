@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import "./UserList.scss";
+import { Link } from "react-router-dom";
 
 interface User {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
 }
 
@@ -14,8 +17,8 @@ const UserList: React.FC = () => {
       const res = await fetch("https://dummyjson.com/users");
       if (!res.ok) throw new Error("Cannot update!");
 
-      const data = await res.json();
-      setUsers(data);
+      const { users } = await res.json();
+      setUsers(users);
     } catch (error) {
       console.error("Error fetching users:", error);
     }
@@ -29,8 +32,12 @@ const UserList: React.FC = () => {
     <div>
       <h1>Users</h1>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+        {users.map((user, index) => (
+          <li className="users" key={index}>
+            <Link to={`/userList/${user.id}`}>
+              {user.firstName} {user.lastName}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

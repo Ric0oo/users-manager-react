@@ -1,20 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Nav.scss";
 
 export const Nav = () => (
   <nav>
     <ul>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <NavLink to="/details">Details</NavLink>
+        <Link to="/userList">user list</Link>
       </li>
       <li>
-        <NavLink to="/useradd">User Add</NavLink>
-      </li>
-      <li>
-        <NavLink to="/useredit">User Edit</NavLink>
+        <Link to="/userList/1">user</Link>
       </li>
     </ul>
   </nav>

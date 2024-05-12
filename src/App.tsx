@@ -1,12 +1,10 @@
-import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav/Nav";
 import { Home } from "./pages/Home/Home";
-import { Details } from "./pages/Details/Details";
-import { UserAdd } from "./pages/UserAdd/UserAdd";
-import { UserEdit } from "./pages/UserEdit/UserEdit";
 import { NotFound } from "./pages/NotFound/NotFound";
+import UserList from "./components/UserList/UserList";
+import UserDetails from "./components/UserDetails/UserDetails";
 
 function App() {
   return (
@@ -14,9 +12,8 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<Details />} />
-        <Route path="/" element={<UserAdd />} />
-        <Route path="/" element={<UserEdit />} />
+        <Route path="/userList" element={<UserList />} />
+        <Route path="/userList/userID" element={<UserDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
