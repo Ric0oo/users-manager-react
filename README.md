@@ -1,46 +1,52 @@
-# Getting Started with Create React App
+## Projekt podsumowujący
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projekt: Menedżer Użytkowników
 
-## Available Scripts
+Celem projektu jest stworzenie aplikacji webowej, która umożliwia zarządzanie listą użytkowników. Aplikacja będzie korzystać z zewnętrznego API do pobierania, tworzenia, aktualizowania i usuwania danych o użytkownikach.
 
-In the project directory, you can run:
+Funkcjonalności:
 
-### `npm start`
+Lista użytkowników: Użytkownik będzie mógł wyświetlić listę wszystkich zarejestrowanych użytkowników w systemie.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Szczegóły użytkownika: Po kliknięciu na wybranego użytkownika, użytkownik zostanie przekierowany do strony ze szczegółowymi informacjami o tym użytkowniku, takimi jak imię, nazwisko, adres e-mail, numer telefonu, itp.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Dodawanie nowego użytkownika: Aplikacja będzie posiadać formularz umożliwiający dodanie nowego użytkownika do systemu.
 
-### `npm test`
+Edycja użytkownika: Użytkownik będzie mógł edytować dane istniejącego użytkownika.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Usuwanie użytkownika: Użytkownik będzie mógł usunąć istniejącego użytkownika z systemu.
 
-### `npm run build`
+Nawigacja: Aplikacja będzie posiadać kilka stron, między którymi użytkownik będzie mógł się przemieszczać za pomocą React Router.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Technologie:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React: Aplikacja będzie zbudowana przy użyciu biblioteki React, wykorzystując komponenty funkcyjne.
+React Router: Do obsługi nawigacji między stronami aplikacji.
+Fetch API: Do komunikacji z zewnętrznym API i pobierania, tworzenia, aktualizowania oraz usuwania danych o użytkownikach.
+React Context lub Redux: Do zarządzania stanem aplikacji (np. przechowywania listy użytkowników, wybranego użytkownika, etc.).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Struktura projektu:
 
-### `npm run eject`
+Strona główna: Zawiera listę wszystkich użytkowników.
+Strona szczegółów użytkownika: Wyświetla szczegółowe informacje o wybranym użytkowniku.
+Strona dodawania użytkownika: Zawiera formularz do dodawania nowego użytkownika.
+Strona edycji użytkownika: Zawiera formularz do edycji danych istniejącego użytkownika.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Komponenty:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+UserList: Komponent wyświetlający listę użytkowników.
+UserDetails: Komponent wyświetlający szczegóły wybranego użytkownika.
+UserForm: Komponent zawierający formularz do dodawania lub edycji użytkownika.
+Navigation: Komponent odpowiedzialny za nawigację między stronami.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Przykładowy przebieg:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Użytkownik przegląda listę wszystkich użytkowników na stronie głównej.
+Użytkownik klika na wybranego użytkownika, co powoduje przekierowanie do strony UserDetails za pomocą React Router.
+Strona UserDetails pobiera szczegółowe informacje o użytkowniku z API i wyświetla je w odpowiednim komponencie.
+Użytkownik może przejść do strony AddUser i wypełnić formularz, aby dodać nowego użytkownika do systemu.
+Aplikacja wysyła żądanie POST do API za pomocą fetch, tworząc nowego użytkownika.
+Użytkownik może edytować dane istniejącego użytkownika na stronie EditUser.
+Aplikacja wysyła żądanie PUT do API za pomocą fetch, aktualizując dane użytkownika.
+Użytkownik może usunąć istniejącego użytkownika z listy, a aplikacja wyśle żądanie DELETE do API.
+Użytkownik może nawigować między stronami aplikacji za pomocą komponentu Navigation.
